@@ -3,10 +3,10 @@
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
-      <li><a href="#/test" target="_blank">test</a></li>
-      <li><a href="#/nav" target="_blank">nav</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+      <li><a href="#/test">test</a></li>
+      <li><a href="#/nav">nav</a></li>
+      <li><a href="#/content">content</a></li>
+      <li><a href="#/login">login</a></li>
     </ul>
   </div>
 </template>
