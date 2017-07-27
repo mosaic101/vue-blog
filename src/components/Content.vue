@@ -26,6 +26,13 @@
             </div>
           </article>
 
+<footer class="page">
+  <el-pagination
+    layout="prev, pager, next"
+    :total="1000">
+  </el-pagination>
+</footer>
+
         </el-col>
 
         <el-col :xs="24" :md="6">
@@ -68,15 +75,26 @@ export default {
 <style lang="less">
 .container {
   max-width: 1360px;
-  margin: 30px auto; // padding: 0 15px;
-  border: 1px solid steelblue;
+  margin: 30px auto;
+  // padding: 0 15px;
 }
 
 .el-col {
-  padding: 15px; // border: 1px solid red;
+  padding: 0 15px;
 }
 
 .post {
-  border: 1px solid red;
+  background: #ffffff;
+  padding: 15px;
 }
+
+.post-head {
+  text-align: center;
+}
+
+.page {
+  margin:20px;
+  text-align: center;
+}
+
 </style>

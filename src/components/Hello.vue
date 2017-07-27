@@ -3,7 +3,6 @@
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
-      <li><a href="#/test">test</a></li>
       <li><a href="#/nav">nav</a></li>
       <li><a href="#/content">content</a></li>
       <li><a href="#/login">login</a></li>
