@@ -1,27 +1,35 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Hello from '@/components/Hello'
-import NavMenu from '@/components/NavMenu'
-import Content from '@/components/Content'
+
+
+import login from '@/pages/login'
+import messageList from '@/pages/messageList'
+import topicList from '@/pages/topicList'
+import topicDetail from '@/pages/topicDetail'
+import about from '@/pages/about'
 
 Vue.use(Router)
 
 const routes = [{
     path: '/',
-    component: Content
-  },
-  {
-    path: '/nav',
-    component: NavMenu
-  },
-  {
-    path: '/content',
-    component: Hello
-  },
-  {
+    component: topicList,
+    children: []
+  },{
+    path: '/messages',
+    component: messageList
+  },{
+    path: '/topics',
+    component: topicList
+  }, {
+    path: '/topics/:id',
+    component: topicDetail
+  }, {
+    path: '/about',
+    component: about
+  }, {
     path: '/login',
-    component: require('@/pages/login')
+    component: login
   }
 ]
 
