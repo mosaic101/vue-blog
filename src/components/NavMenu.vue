@@ -37,7 +37,7 @@ export default {
   props: ['activeIndex'],
   data() {
     return {
-      activeIndex: 'topics',
+      // activeIndex: 'topics',
       isMobile: false //TODO:
     };
   },
@@ -58,7 +58,7 @@ export default {
           this.$router.push('/about')
           break
         default:
-          this.$router.push('/')
+          this.$router.push('/topics')
       }
     },
     handleCommand(command) {

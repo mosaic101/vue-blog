@@ -1,6 +1,6 @@
 <template>
   <div>
-    <container active-item="topics">
+    <container>
       <div slot="right">
       <article :id="item.id" class="topic" v-for="(item, index) in list">
         <div class="topic-head">
@@ -28,6 +28,7 @@
 
 <script>
 import container from '../components/container'
+
 export default {
   data() {
     return {

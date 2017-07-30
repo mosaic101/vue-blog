@@ -1,42 +1,57 @@
 <template>
-  <div class="message">
-    <nav-menu activeIndex="messages"></nav-menu>
-
-    <h1>{{ msg }}</h1>
-
+  <div>
+    <container>
+      <div slot="right">
+      <h1>{{ msg }}</h1>
+      </div>
+    </container>
   </div>
 </template>
 
 <script>
-import navMenu from '../components/navMenu'
+import container from '../components/container'
 
 export default {
-  name: 'hello',
-  data () {
+  data() {
     return {
-      msg: 'message page'
+      msg: 'this is a message board'
     }
   },
   components: {
-    navMenu
+    container
+  },
+  methods: {
+    openDetail(id) {
+      this.$router.push('topics/' + id)
+    }
   }
+
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
+<style lang="less" scoped>
+.container {
+  max-width: 1360px;
+  margin: 30px auto; // padding: 0 15px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.el-col {
+  padding: 0 15px;
 }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
+.topic {
+  background: #ffffff;
+  margin-bottom: 20px;
+  padding: 15px;
 }
 
+.topic-head {
+  text-align: center;
+}
+
+.page {
+  margin-bottom: 20px;
+  text-align: center;
+}
 </style>
