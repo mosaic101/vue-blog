@@ -52,8 +52,8 @@ export default {
           this.$router.push('/topics')
           break
         case 'messages':
-        this.$router.push('/messages')
-        break
+          this.$router.push('/messages')
+          break
         case 'about':
           this.$router.push('/about')
           break

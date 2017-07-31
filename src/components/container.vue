@@ -4,6 +4,9 @@
     <div class="container">
       <el-row>
         <el-col :xs="24" :md="18">
+          <el-breadcrumb separator="/">
+			      <el-breadcrumb-item v-for="(item, index) in $route.meta" key="index">{{item}}</el-breadcrumb-item>
+		      </el-breadcrumb>
           <slot name="right">no right part</slot>
         </el-col>
         <el-col :xs="24" :md="6">

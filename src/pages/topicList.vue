@@ -28,6 +28,7 @@
 
 <script>
 import container from '../components/container'
+
 export default {
   data() {
     return {
@@ -43,12 +44,20 @@ export default {
       ]
     }
   },
+  created () {
+    // this.$loading({ fullscreen: true })
+    // 组件创建完后获取数据，
+    // 此时 data 已经被 observed 了
+    this.fetchData()
+  },
   components: {
     container
   },
   methods: {
+    async fetchData() {
+    },
     openDetail(id) {
-      this.$router.push('topics/' + id)
+      this.$router.push({ name: 'topicDetail', params: {  id: id }})
     }
   }
 
