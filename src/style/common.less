@@ -1,8 +1,10 @@
 @charset "UTF-8";
 
 /*common styles*/
-html,body {
+body {
   margin: 0;
+  padding: 0;
+  // text-align: center; 复用概率低，不适用
   color: #505050;
   background: #ebebeb;
   line-height: 1.75em;
@@ -10,9 +12,21 @@ html,body {
   font-family: "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
 }
 
+li{list-style-type:none;}
+
+img {
+  // vertical-align:top;
+  width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
+  font-weight: normal;
   color: #303030;
 }
+
+a:link {color: #1f3a87; text-decoration:none;}
+a:visited {color: #83006f;text-decoration:none;}
+a:hover {color: #bc2931; text-decoration:underline;}
+a:active {color: #bc2931;}
 
 

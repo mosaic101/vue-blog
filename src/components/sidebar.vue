@@ -1,5 +1,5 @@
 <template>
-  <div class="topic">
+  <div class="sidebar">
     <div class="widget">
       <h4 class="title">社区</h4>
       <div class="content community">
@@ -42,28 +42,12 @@ export default {
 }
 </script>
 
-<style lang="less">
-.container {
-  max-width: 1360px;
-  margin: 30px auto; // padding: 0 15px;
-}
+<style lang="less" scoped>
 
-.el-col {
-  padding: 0 15px;
-}
-
-.topic {
+.sidebar {
   background: #ffffff;
-  margin-bottom: 20px;
   padding: 15px;
-}
-
-.topic-head {
-  text-align: center;
-}
-
-.page {
   margin-bottom: 20px;
-  text-align: center;
 }
+
 </style>

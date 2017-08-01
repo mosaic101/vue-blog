@@ -1,24 +1,24 @@
 ## Features
 
-1. topics
-2. home page
-3. message board
-4. open project
-5. search
-6. chatroom
-
+- welcome page
+- topics
+- message board
+- search
+- about me
+- 标签导航
+- 文章追溯
+- 照片墙
 
 ## TODO
 
+- 重构导航，适用于mobile
 - find icon more
 - fetch
 - getData
 - project deploy
-- less and responsive
 
 
-
-## notice
+## Notice
 
 - this.$router ==> <router-link to=""></router-link>
 ```js
@@ -42,3 +42,10 @@ new Router({
 ```
 
 - 路由懒加载
+
+
+### CSS
+
+```css
+font-weight: normal;
+```

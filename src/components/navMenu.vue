@@ -1,6 +1,5 @@
 <template>
-  <div class="nav">
-    <div>
+  <div class="nav-menu">
       <el-menu theme="dark" :default-active="activeIndex" mode="horizontal" @select="handleSelect">
         <el-menu-item index="topics">
           <i class="el-icon-message"></i>博客
@@ -23,22 +22,18 @@
           <el-dropdown-item command="about">关于</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
-    </div>
-    <div>
-
-    </div>
-
   </div>
 </template>
 
-
 <script>
+
+//TODO: rebuild
 export default {
   props: ['activeIndex'],
   data() {
     return {
       // activeIndex: 'topics',
-      isMobile: false //TODO:
+      isMobile: false
     };
   },
   watch: {
@@ -67,3 +62,19 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-width: 320px;
+  /* height: 70px; */
+  z-index: 1;
+}
+
+
+
+</style>
+

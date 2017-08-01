@@ -3,17 +3,28 @@
     <container active-item="topics">
       <div slot="right">
         <article id="88" class="topic">
-          <header class="post-head">
-            <h1 class="post-title">Ghost 0.7 版本将会带来哪些惊喜</h1>
-            <section class="post-meta">
+
+          <header class="topic-header">
+            <h1 class="topic-title">Ghost 0.7 版本将会带来哪些惊喜</h1>
+            <section class="topic-meta">
               <span class="author">作者：
                 <a href="/author/wangsai/">王赛</a>
               </span> •
-              <time class="post-date" datetime="2015年8月13日星期四晚上11点59分" title="2015年8月13日星期四晚上11点59分">2015年8月13日</time>
+              <time class="topic-date" datetime="2015年8月13日星期四晚上11点59分" title="2015年8月13日星期四晚上11点59分">2015年8月13日</time>
             </section>
           </header>
+          <hr>
 
-          <section class="post-content">
+          <div class="tag">
+            <el-tag>标签一</el-tag>
+            <el-tag type="gray">标签二</el-tag>
+            <el-tag type="primary">标签三</el-tag>
+            <el-tag type="success">标签四</el-tag>
+            <el-tag type="warning">标签五</el-tag>
+            <el-tag type="danger">标签六</el-tag>
+          </div>
+          <!-- content insert -->
+          <section class="topic-content">
             <h2 id="">后台界面</h2>
 
             <p>首当其冲的就是后台 UI 的改变。</p>
@@ -68,22 +79,11 @@
             <p>Ghost 0.7 仍然是值得期待的，我们也会看到 Ghost 变的越来越强大。</p>
           </section>
 
-          <footer class="post-footer clearfix">
+          <footer class="topic-footer clearfix">
             <div class="pull-left tag-list">
               <i class="fa fa-folder-open-o"></i>
               <a href="/tag/about-ghost/">Ghost</a>,
               <a href="/tag/release/">新版本发布</a>
-            </div>
-
-            <div class="pull-right share">
-              <div class="bdsharebuttonbox share-icons bdshare-button-style0-24" data-bd-bind="1501338968511">
-                <a href="#" class="bds_more" data-cmd="more"></a>
-                <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
-                <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-              </div>
             </div>
           </footer>
 
@@ -124,25 +124,24 @@ export default {
 }
 </script>
 
-<style lang="less">
-.container {
-  max-width: 1360px;
-  margin: 30px auto; // padding: 0 15px;
-}
-
-.el-col {
-  padding: 0 15px;
-}
+<style lang="less" scoed>
 
 .topic {
   background: #ffffff;
-  margin-bottom: 20px;
   padding: 15px;
+  margin-bottom: 20px;
 }
 
-.post-content img {
-  max-width: 100%;
-  height: auto;
-  margin: 0.2em 0;
+.topic-header {
+  text-align:center;
 }
+
+.tag {
+  text-align:right;
+}
+// .topic-content img {
+//   max-width: 100%;
+//   height: auto;
+//   margin: 0.2em 0;
+// }
 </style>
