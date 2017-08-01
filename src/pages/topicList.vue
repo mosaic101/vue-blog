@@ -54,7 +54,18 @@ export default {
     container
   },
   methods: {
-    async fetchData() {
+    fetchData() {
+      // GET /someUrl
+      this.$http.get('http://localhost:5757/v1/tickets').then(response => {
+
+        // get body data
+        this.someData = response.body;
+        console.log(response);
+
+      }, response => {
+        // error callback
+        console.log(response);
+      });
     },
     openDetail(id) {
       this.$router.push({ name: 'topicDetail', params: {  id: id }})
