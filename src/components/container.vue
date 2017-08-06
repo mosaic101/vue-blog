@@ -3,14 +3,14 @@
     <nav-menu active-index="activeItem"></nav-menu>
     <div class="container">
       <el-row>
-        <el-col class="main" :xs="24" :md="18">
+        <el-col class="main" :xs="24" :sm="18">
           <!-- <el-breadcrumb separator="/">
 			      <el-breadcrumb-item v-for="(item, index) in $route.meta" key="index">{{item}}</el-breadcrumb-item>
 		      </el-breadcrumb> -->
           <slot name="right">no right part</slot>
         </el-col>
         <!-- sidebar < 768px, should auto disappear -->
-        <el-col :xs="24" :md="6">
+        <el-col :sm="6">
           <sidebar></sidebar>
         </el-col>
       </el-row>

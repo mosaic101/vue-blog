@@ -44,10 +44,15 @@ export default {
 
 <style lang="less" scoped>
 
-.sidebar {
+.sidebar  {
   background: #ffffff;
   padding: 15px;
   margin-bottom: 20px;
+}
+
+// display none
+@media screen and (max-width:768px) {
+.sidebar {display: none;}
 }
 
 </style>

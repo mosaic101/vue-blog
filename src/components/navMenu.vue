@@ -11,7 +11,7 @@
           <i class="el-icon-message"></i>关于
         </el-menu-item>
       </el-menu>
-      <el-dropdown v-if="isMobile" @command="handleCommand" menu-align='start'>
+      <el-dropdown @command="handleCommand" menu-align='start'>
         <!-- <img src="favicon.ico" class="avator"> -->
         <span class="el-dropdown-link">
           <i class="el-icon-caret-bottom el-icon-menu"></i>
@@ -22,6 +22,18 @@
           <el-dropdown-item command="about">关于</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
+      <div class="nav-collapse">
+        <a>
+          <i class="el-icon-caret-bottom el-icon-menu"></i>
+        </a>
+        <div class="mini-nav-menu">
+          <ul>
+            <li>2222</li>
+            <li>2222</li>
+            <li>2222</li>
+          </ul>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -63,7 +75,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 .nav-menu {
   position: fixed;
@@ -74,7 +86,17 @@ export default {
   z-index: 1;
 }
 
+.el-dropdown {
+  display:none;
+}
 
+@media screen and (max-width:768px) {
+.el-dropdown {display:block;}
+.el-menu {display:none;}
+}
 
+.nav-collapse {
+  display:none;
+}
 </style>
 
