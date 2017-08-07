@@ -2,10 +2,10 @@
   <div>
     <container active-item="topics">
       <div slot="right">
-        <article :id="item.id" class="topic" v-for="(item, index) in list">
+        <article :id="item._id" class="topic" v-for="(item, index) in list">
           <div class="topic-head">
             <h1 class="topic-title">
-              <a @click="openDetail(item.id)">Ghost 1.0 RC1 发布，可用于生产环境</a>
+              <a @click="openDetail(item._id)">Ghost 1.0 RC1 发布，可用于生产环境</a>
             </h1>
             <div class="topic-meta">
               <span class="author">作者：
@@ -34,7 +34,7 @@
 
 <script>
 import container from '../components/container'
-
+import {BASE_URL} from '@/config/env'
 export default {
   data() {
     return {
@@ -54,24 +54,30 @@ export default {
     // this.$loading({ fullscreen: true })
     // 组件创建完后获取数据，
     // 此时 data 已经被 observed 了
-    // this.fetchData()
+    this.fetchData()
   },
   components: {
     container
   },
   methods: {
-    fetchData() {
+    async fetchData() {
+      // TODO: need to format
+      let url = BASE_URL + '/topics'
+      let response = await this.$http.get(url)
+      console.log(response.data.data);
+      this.list = response.data.data
+      console.log(this.list);
       // GET /someUrl
-      this.$http.get('http://localhost:5757/v1/tickets').then(response => {
+      // this.$http.get(url).then(response => {
 
-        // get body data
-        this.someData = response.body;
-        console.log(response);
+      //   // get body data
+      //   this.someData = response.body;
+      //   console.log(response.data);
 
-      }, response => {
-        // error callback
-        console.log(response);
-      });
+      // }, response => {
+      //   // error callback
+      //   console.log(response);
+      // });
     },
     openDetail(id) {
       this.$router.push({ name: 'topicDetail', params: { id: id } })

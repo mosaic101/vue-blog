@@ -1,23 +1,24 @@
-/**
- * 配置编译环境和线上环境之间的切换
- *
- * baseUrl: 域名地址
- * routerMode: 路由模式
- * baseImgPath: 图片存放地址
- *
- */
-let baseUrl = '';
-let routerMode = 'history';
-let baseImgPath = 'http://images.cangdu.org/';
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   env.js                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jianjin.wu <mosaic101@foxmail.com>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/07 22:15:55 by jianjin.wu        #+#    #+#             */
+/*   Updated: 2017/08/07 22:56:12 by jianjin.wu       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+let BASE_URL = '' // ip address
 
 if (process.env.NODE_ENV == 'development') {
-	//baseUrl = 'http://cangdu.org:8001';
-}else{
-	baseUrl = 'http://localhost: 4000';
+  BASE_URL = 'http://localhost:4000/api'
+}
+else {
+  BASE_URL = 'http://www.jianjin.com'
 }
 
 export {
-	baseUrl,
-	routerMode,
-	baseImgPath
+  BASE_URL
 }
