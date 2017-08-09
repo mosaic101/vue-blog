@@ -8,7 +8,6 @@ body {
   color: #505050;
   background: #ebebeb;
   line-height: 1.75em;
-  position: relative;
   font-family: "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
 }
 
@@ -24,9 +23,22 @@ h1, h2, h3, h4, h5, h6 {
   color: #303030;
 }
 
-a:link {color: #1f3a87; text-decoration:none;}
-a:visited {color: #83006f;text-decoration:none;}
-a:hover {color: #bc2931; text-decoration:underline;}
-a:active {color: #bc2931;}
+@aColor : black;
 
+a {
+  color: @aColor;
+  &:link {text-decoration:none;}
+  &:visited {text-decoration:none;}
+  &:hover { text-decoration:underline;}
+}
+
+// a:link {color: #1f3a87; text-decoration:none;}
+// a:visited {color: #83006f;text-decoration:none;}
+// a:hover {color: #bc2931; text-decoration:underline;}
+// a:active {color: #bc2931;}
+
+.btn {
+  background-color:aColor;
+  color:aColor;
+}
 
