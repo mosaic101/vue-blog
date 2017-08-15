@@ -3,7 +3,7 @@
 	  	<transition name="form-fade" mode="in-out">
 	  		<section class="form_contianer" v-show="showLogin">
 		  		<div class="manage_tip">
-		  			<p>elm后台管理系统</p>
+		  			<p>后台管理系统</p>
 		  		</div>
 		    	<el-form :model="loginForm" :rules="rules" ref="loginForm">
 					<el-form-item prop="username">
@@ -16,9 +16,9 @@
 				    	<el-button type="primary" @click="submitForm('loginForm')" class="submit_btn">登陆</el-button>
 				  	</el-form-item>
 				</el-form>
-				<p class="tip">温馨提示：</p>
+				<!-- <p class="tip">温馨提示：</p>
 				<p class="tip">未登录过的新用户，自动注册</p>
-				<p class="tip">注册过的用户可凭账号密码登录</p>
+				<p class="tip">注册过的用户可凭账号密码登录</p> -->
 	  		</section>
 	  	</transition>
   	</div>
@@ -54,14 +54,16 @@
 
 		},
 		methods: {
-
+      submitForm() {
+        this.$router.push({path: 'admin/topics'})
+      }
 
 		}
 	}
 </script>
 
 <style lang="less" scoped>
-	@import '../style/mixin';
+	@import '../../style/mixin';
 	.login_page{
 		background-color: #324057;
 	}
