@@ -55,7 +55,7 @@
 		},
 		methods: {
       submitForm() {
-        this.$router.push({path: 'admin/topics'})
+        this.$router.push({path: '/admin/topics'})
       }
 
 		}

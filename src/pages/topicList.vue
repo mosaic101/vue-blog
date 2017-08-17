@@ -12,7 +12,7 @@
                 <a href="/author/wangsai/"></a>
                 <router-link :to="{ path: 'about' }">{{item.createdBy}}</router-link>
               </span> •
-              <time class="topic-date" :datetime="item.createdAt" :title="item.createdAt">{{item.createdAt}}</time>
+              <time class="topic-date">{{item.createdDate}}</time>
             </div>
           </div>
           <div class="topic-content" v-html="item.html">
@@ -21,12 +21,8 @@
             <router-link class="btn btn-default" :to="{ name: 'topicDetail', params: { id: item._id } }">阅读全文</router-link>
           </div>
         </article>
-
-        <div class="page-footer">
-          <el-pagination layout="prev, pager, next" :total="1000">
-          </el-pagination>
-        </div>
-
+        <!-- 分页 -->
+        <pagination></pagination>
       </div>
     </container>
   </div>
@@ -34,6 +30,7 @@
 
 <script>
 import container from '../components/container'
+import pagination from '../components/pagination'
 import { BASE_URL } from '@/config/env'
 export default {
   data() {
@@ -48,7 +45,8 @@ export default {
     this.fetchData()
   },
   components: {
-    container
+    container,
+    pagination
   },
   methods: {
     async fetchData() {
@@ -77,7 +75,7 @@ export default {
   text-align: center;
 }
 
-.page-footer {
+.pagination {
   text-align: center;
 }
 </style>
