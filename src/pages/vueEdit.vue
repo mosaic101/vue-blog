@@ -1,7 +1,7 @@
 <template>
     <div>
-        <!-- <head-top></head-top> -->
-        <div class="edit_container">
+        <nav-menu></nav-menu>
+        <div class="edit-container">
         	<quill-editor v-model="content"
                 ref="myQuillEditor"
                 class="editer"
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    // import headTop from '../components/headTop'
+    import navMenu from '../components/navMenu'
     import { quillEditor } from 'vue-quill-editor'
 
     export default {
@@ -29,7 +29,8 @@
             }
         },
     	components: {
-    		quillEditor,
+        quillEditor,
+        navMenu
     	},
         computed: {
           	editor() {
@@ -48,11 +49,11 @@
     }
 </script>
 
-<style lang="less">
-	@import '../../style/mixin';
-	.edit_container{
+<style lang="less" scoped>
+	@import '../style/mixin';
+	.edit-container{
 		padding: 40px;
-		margin-bottom: 40px;
+		margin-top: 80px;
 	}
 	.editer{
 		height: 350px;

@@ -1,5 +1,6 @@
 <template>
   	<div class="login_page fillcontain">
+      <nav-menu active-index="activeItem"></nav-menu>
 	  	<transition name="form-fade" mode="in-out">
 	  		<section class="form_contianer" v-show="showLogin">
 		  		<div class="manage_tip">
@@ -25,7 +26,7 @@
 </template>
 
 <script>
-
+  import navMenu from '../components/navMenu'
 	export default {
 	    data(){
 			return {
@@ -44,6 +45,9 @@
 				showLogin: false,
 			}
 		},
+    components: {
+      navMenu
+    },
 		mounted(){
 			this.showLogin = true;
 			if (!this.adminInfo.id) {
@@ -63,8 +67,10 @@
 </script>
 
 <style lang="less" scoped>
-	@import '../../style/mixin';
+	@import '../style/mixin';
 	.login_page{
+    width: 100%;
+    height: 100%;
 		background-color: #324057;
 	}
 	.manage_tip{

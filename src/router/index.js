@@ -10,8 +10,8 @@ const topicDetail = r => require.ensure([], () => r(require('@/pages/topicDetail
 const about = r => require.ensure([], () => r(require('@/pages/about')), 'about')
 const test = r => require.ensure([], () => r(require('@/pages/test')), 'test')
 // admin pages
-const login = r => require.ensure([], () => r(require('@/pages/admin/login')), 'login')
-const vueEdit = r => require.ensure([], () => r(require('@/pages/admin/vueEdit')), 'vueEdit')
+const login = r => require.ensure([], () => r(require('@/pages/login')), 'login')
+const vueEdit = r => require.ensure([], () => r(require('@/pages/vueEdit')), 'vueEdit')
 
 Vue.use(Router)
 
