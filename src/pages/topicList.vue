@@ -22,7 +22,13 @@
           </div>
         </article>
         <!-- 分页 -->
-        <pagination></pagination>
+        <div class="pagination">
+            <el-pagination
+            @current-change="handleCurrentChange"
+            layout="prev, pager, next"
+            :total="count">
+          </el-pagination>
+        </div>
       </div>
     </container>
   </div>
@@ -35,6 +41,7 @@ import { BASE_URL } from '@/config/env'
 export default {
   data() {
     return {
+      count: 33,
       list: []
     }
   },
@@ -44,15 +51,31 @@ export default {
     // 此时 data 已经被 observed 了
     this.fetchData()
   },
+  watch: {
+    '$route' (to, from) {
+      // 对路由变化作出响应...
+      this.fetchData(to.query.page)
+    }
+  },
   components: {
     container,
     pagination
   },
   methods: {
-    async fetchData() {
-      let url = BASE_URL + '/topics'
+    async fetchData(page) {
+      let url
+      if (page) {
+        url = BASE_URL + '/topics?page=' + page
+      }
+      else {
+        url = BASE_URL + '/topics'
+      }
       let response = await this.$http.get(url)
       this.list = response.data.data
+    },
+    handleCurrentChange(page) {
+      let url = '/topics?page=' + page
+      this.$router.push(url)
     }
   }
 

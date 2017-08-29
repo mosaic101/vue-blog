@@ -1,19 +1,41 @@
 <template>
   <div class="pagination">
-    <el-pagination layout="prev, pager, next" :total="count">
+    <el-pagination
+      @current-change="handleCurrentChange"
+      layout="prev, pager, next"
+      :total="count">
     </el-pagination>
   </div>
 </template>
 
 <script>
+import { BASE_URL } from '@/config/env'
 export default {
   data() {
     return {
-      count: 66
+      count: 33
+    }
+  },
+  created() {
+    this.fetchData()
+  },
+  watch: {
+    '$route' (to, from) {
+      // 对路由变化作出响应...
+      console.log(1111,to);
+      console.log(2222,from);
     }
   },
   methods: {
-
+    async fetchData() {
+      let url = BASE_URL + '/topics?count=true'
+      let response = await this.$http.get(url)
+      this.count = response.data.data
+    },
+    handleCurrentChange(page) {
+      let url = '/topics?page=' + page
+      this.$router.push(url)
+    }
   }
 
 }

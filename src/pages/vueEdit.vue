@@ -4,7 +4,6 @@
         <div class="edit-container">
         	<quill-editor v-model="content"
                 ref="myQuillEditor"
-                class="editer"
                 :options="editorOption"
                 @ready="onEditorReady($event)">
   			</quill-editor>
@@ -55,7 +54,7 @@
 		padding: 40px;
 		margin-top: 80px;
 	}
-	.editer{
+	.quill-editor{
 		height: 350px;
 	}
 	.submit_btn{
