@@ -38,6 +38,7 @@
 import container from '../components/container'
 import pagination from '../components/pagination'
 import { BASE_URL } from '@/config/env'
+import getData from '@/api/getData'
 export default {
   data() {
     return {
@@ -49,12 +50,12 @@ export default {
     // this.$loading({ fullscreen: true })
     // 组件创建完后获取数据，
     // 此时 data 已经被 observed 了
-    this.fetchData()
+    this._initData()
   },
   watch: {
     '$route' (to, from) {
       // 对路由变化作出响应...
-      this.fetchData(to.query.page)
+      this._initData(to.query.page)
     }
   },
   components: {
@@ -62,16 +63,11 @@ export default {
     pagination
   },
   methods: {
-    async fetchData(page) {
-      let url
-      if (page) {
-        url = BASE_URL + '/topics?page=' + page
-      }
-      else {
-        url = BASE_URL + '/topics'
-      }
-      let response = await this.$http.get(url)
-      this.list = response.data.data
+    async _initData(page) {
+      let url = page ? '/topics?page=' + page
+        : '/topics'
+      this.list = await getData({url})
+      this.count = await getData({url: '/topics/count'})
     },
     handleCurrentChange(page) {
       let url = '/topics?page=' + page

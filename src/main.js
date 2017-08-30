@@ -6,9 +6,10 @@ import 'element-ui/lib/theme-default/index.css'
 import VueResource from 'vue-resource'
 
 Vue.config.productionTip = false
-
+import axios from 'axios'
+Vue.prototype.$http = axios
 Vue.use(ElementUI)
-Vue.use(VueResource)
+// Vue.use(VueResource)
 
 /* eslint-disable no-new */
 new Vue({

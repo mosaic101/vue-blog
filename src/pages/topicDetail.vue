@@ -52,13 +52,13 @@ export default {
     }
   },
   created() {
-    this.fetchData()
+    this._initData()
   },
   components: {
     container
   },
   methods: {
-    async fetchData() {
+    async _initData() {
       let url = BASE_URL + '/topics/' + this.$route.params.id
       let response = await this.$http.get(url)
       this.topic = response.data.data

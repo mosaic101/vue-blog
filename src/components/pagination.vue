@@ -17,7 +17,7 @@ export default {
     }
   },
   created() {
-    this.fetchData()
+    this._initData()
   },
   watch: {
     '$route' (to, from) {
@@ -27,7 +27,7 @@ export default {
     }
   },
   methods: {
-    async fetchData() {
+    async _initData() {
       let url = BASE_URL + '/topics?count=true'
       let response = await this.$http.get(url)
       this.count = response.data.data
