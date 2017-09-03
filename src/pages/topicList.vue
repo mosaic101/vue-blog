@@ -37,7 +37,6 @@
 <script>
 import container from '../components/container'
 import pagination from '../components/pagination'
-import { BASE_URL } from '@/config/env'
 import getData from '@/api/getData'
 export default {
   data() {

@@ -17,7 +17,14 @@ export default async({ method, url, data }) => {
   let res = await axios({
       method: method,
       url: url,
-      data: data
+      data: data,
+      // headers: {
+      //   'Access-Control-Allow-Origin': '*',
+      //   'Access-Control-Allow-Headers': 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild',
+      //   'Access-Control-Allow-Methods': ':POST,GET,OPTIONS,DELETE',
+			// 	'Accept': 'application/json',
+			// 	'Content-Type': 'application/json'
+			// },
     })
   return res.data.data
 }

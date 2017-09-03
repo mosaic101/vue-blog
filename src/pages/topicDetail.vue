@@ -15,26 +15,26 @@
           </header>
           <hr>
 
-          <div class="tag">
-             <el-tag>标签一</el-tag>
+          <!-- <div class="tag">
+            <el-tag >标签一</el-tag>
             <el-tag type="gray">标签二</el-tag>
             <el-tag type="primary">标签三</el-tag>
             <el-tag type="success">标签四</el-tag>
             <el-tag type="warning">标签五</el-tag>
             <el-tag type="danger">标签六</el-tag>
-          </div>
+          </div> -->
           <!-- content insert -->
           <section class="topic-content" v-html="topic.html">
           </section>
 
-          <footer class="topic-footer clearfix">
-            <div class="pull-left tag-list">
-              <i class="fa fa-folder-open-o"></i>
-              <a href="/tag/about-ghost/">Ghost</a>,
-              <a href="/tag/release/">新版本发布</a>
-            </div>
+          <footer class="tag">
+            <!-- <a href="/tag/about-ghost/">Ghost</a>,
+            <a href="/tag/release/">新版本发布</a> -->
+            标签:
+            <span class="tag-list"  v-for="(item, index) in topic.tags">
+              <a href="/tag/about-ghost/">{{item}}</a>,
+            </span>
           </footer>
-
         </article>
       </div>
     </container>
@@ -44,7 +44,7 @@
 
 <script>
 import container from '../components/container'
-import { BASE_URL } from '@/config/env'
+import getData from '@/api/getData'
 export default {
   data() {
     return {
@@ -59,9 +59,8 @@ export default {
   },
   methods: {
     async _initData() {
-      let url = BASE_URL + '/topics/' + this.$route.params.id
-      let response = await this.$http.get(url)
-      this.topic = response.data.data
+      let url = '/topics/' + this.$route.params.id
+      this.topic = await getData({url})
     },
     openDetail(id) {
       this.$router.push('topics/' + id)
@@ -83,9 +82,10 @@ export default {
   text-align:center;
 }
 
-.tag {
-  text-align:right;
+.tag .tag-list{
+  // float: left;
 }
+
 // .topic-content img {
 //   max-width: 100%;
 //   height: auto;
