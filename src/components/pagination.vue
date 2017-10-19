@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { BASE_URL } from '@/config/env'
 export default {
   data() {
     return {
@@ -28,7 +27,7 @@ export default {
   },
   methods: {
     async _initData() {
-      let url = BASE_URL + '/topics?count=true'
+      let url = '/topics?count=true'
       let response = await this.$http.get(url)
       this.count = response.data.data
     },

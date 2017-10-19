@@ -9,13 +9,12 @@
             </h1>
             <div class="topic-meta">
               <span class="author">作者：
-                <a href="/author/wangsai/"></a>
                 <router-link :to="{ path: 'about' }">{{item.createdBy}}</router-link>
               </span> •
               <time class="topic-date">{{item.createdDate}}</time>
             </div>
           </div>
-          <div class="topic-content" v-html="item.html">
+          <div class="topic-content" v-html="item.html" v-highlight>
           </div>
           <div class="topic-link">
             <router-link class="btn btn-default" :to="{ name: 'topicDetail', params: { id: item._id } }">阅读全文</router-link>

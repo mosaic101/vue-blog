@@ -4,6 +4,8 @@ import router from './router'
 import ElementUI from 'element-ui'
 // import css
 import 'element-ui/lib/theme-default/index.css'
+// directives
+require('./directives/index')
 
 // import axios from 'axios'
 // Vue.prototype.$http = axios

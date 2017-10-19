@@ -8,7 +8,7 @@
             <h1 class="topic-title">{{topic.title}}</h1>
             <section class="topic-meta">
               <span class="author">作者：
-                <a href="/author/wangsai/">{{topic.createdBy}}</a>
+                <a href="/about">{{topic.createdBy}}</a>
               </span> •
               <time class="topic-date">{{topic.createdDate}}</time>
             </section>
@@ -24,7 +24,7 @@
             <el-tag type="danger">标签六</el-tag>
           </div> -->
           <!-- content insert -->
-          <section class="topic-content" v-html="topic.html">
+          <section class="topic-content" v-html="topic.html" v-highlight>
           </section>
 
           <footer class="tag">
