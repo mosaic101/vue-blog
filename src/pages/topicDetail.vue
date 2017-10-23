@@ -30,7 +30,7 @@
           <footer class="tag">
             <!-- <a href="/tag/about-ghost/">Ghost</a>,
             <a href="/tag/release/">新版本发布</a> -->
-            标签:
+            <i class="el-icon-fa-tags"></i>
             <span class="tag-list"  v-for="(item, index) in topic.tags">
               <a href="/tag/about-ghost/">{{item}}</a>,
             </span>

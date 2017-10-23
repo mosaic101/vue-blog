@@ -14,8 +14,9 @@
               <time class="topic-date">{{item.createdDate}}</time>
             </div>
           </div>
-          <div class="topic-content" v-html="item.html" v-highlight>
-          </div>
+          <div class="topic-content">{{item.excerpt || '暂无介绍...'}}</div>
+          <!-- <div class="topic-content" v-html="item.html" v-highlight>
+          </div> -->
           <div class="topic-link">
             <router-link class="btn btn-default" :to="{ name: 'topicDetail', params: { id: item._id } }">阅读全文</router-link>
           </div>

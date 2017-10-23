@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import {getAdminInfo} from '@/api/getData'
 
+// TODO: delete
 Vue.use(Vuex)
 
 const state = {

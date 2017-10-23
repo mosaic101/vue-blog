@@ -5,6 +5,9 @@
       标题:
       <el-input type="text" autosize :maxlength=12 placeholder="请输入标题" v-model="title">
       </el-input>
+      摘抄:
+      <el-input type="text" autosize :maxlength=12 placeholder="请输入简介" v-model="excerpt">
+      </el-input>
       标签:
       <el-input type="text" autosize placeholder="请输入标签,以','隔开.例如: js,css" v-model="tags">
       </el-input>
@@ -27,6 +30,7 @@ export default {
     return {
       content: 'show time...',
       title: '',
+      excerpt: '',
       tags: ''
     }
   },
@@ -56,6 +60,7 @@ export default {
         url: '/topics',
         data: {
           title: title,
+          excerpt: this.excerpt,
           markdown: this.markdown,
           html: this.html,
           tags: this.tags.split(',')

@@ -57,12 +57,11 @@ export default {
 <style lang="less" scoped>
 
 .container {
-  max-width: 1360px;
+  max-width: 1200px;
   margin: 90px auto 0;
 }
 
-.el-col {
-  padding: 0 15px;
+.main {
+  padding-right: 15px;
 }
-
 </style>

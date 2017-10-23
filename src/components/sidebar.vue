@@ -6,11 +6,11 @@
         <!-- <p>QQ群：45691985</p> -->
         <p>
           <a href="https://www.github.com/mosaic101" title="Ghost中文网问答社区" target="_blank" onclick="_hmt.push(['_trackEvent', 'big-button', 'click', '问答社区'])">
-            <i class="fa fa-comments"></i> github</a>
+            <i class="el-icon-fa-github"></i> github</a>
         </p>
         <p>
           <a href="https://weibo.com/mosaic101" title="Ghost中文网官方微博" target="_blank" onclick="_hmt.push(['_trackEvent', 'big-button', 'click', '官方微博'])">
-            <i class="fa fa-weibo"></i> 微博</a>
+            <i class="el-icon-fa-weibo"></i> weibo</a>
         </p>
       </div>
     </div>
