@@ -14,25 +14,14 @@
             </section>
           </header>
           <hr>
-
-          <!-- <div class="tag">
-            <el-tag >标签一</el-tag>
-            <el-tag type="gray">标签二</el-tag>
-            <el-tag type="primary">标签三</el-tag>
-            <el-tag type="success">标签四</el-tag>
-            <el-tag type="warning">标签五</el-tag>
-            <el-tag type="danger">标签六</el-tag>
-          </div> -->
           <!-- content insert -->
           <section class="topic-content" v-html="topic.html" v-highlight>
           </section>
 
           <footer class="tag">
-            <!-- <a href="/tag/about-ghost/">Ghost</a>,
-            <a href="/tag/release/">新版本发布</a> -->
-            <i class="el-icon-fa-tags"></i>
+            <i class="el-icon-fa-tags"></i>&nbsp;
             <span class="tag-list"  v-for="(item, index) in topic.tags">
-              <a href="/tag/about-ghost/">{{item}}</a>,
+              {{item}},
             </span>
           </footer>
         </article>

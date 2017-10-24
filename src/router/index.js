@@ -41,6 +41,12 @@ const routes = [
     name: 'topicDetail',
     component: topicDetail
   },
+  // TODO:
+  // {
+  //   path: '/topics/tags/:id',
+  //   name: 'topicTag',
+  //   component: topicTag
+  // },
   {
     path: '/about',
     component: about
