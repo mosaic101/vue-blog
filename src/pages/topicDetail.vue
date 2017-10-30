@@ -21,7 +21,7 @@
           <footer class="tag">
             <i class="el-icon-fa-tags"></i>&nbsp;
             <span class="tag-list"  v-for="(item, index) in topic.tags">
-              {{item}},
+              {{item}}
             </span>
           </footer>
         </article>
@@ -33,7 +33,7 @@
 
 <script>
 import container from '../components/container'
-import getData from '@/api/getData'
+import api from '@/api'
 export default {
   data() {
     return {
@@ -48,14 +48,12 @@ export default {
   },
   methods: {
     async _initData() {
-      let url = '/topics/' + this.$route.params.id
-      this.topic = await getData({url})
+      this.topic = await api.getTopic(this.$route.params.id)
     },
     openDetail(id) {
-      this.$router.push('topics/' + id)
+      this.$router.push(`topics${id}`)
     }
   }
-
 }
 </script>
 

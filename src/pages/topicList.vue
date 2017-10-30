@@ -3,7 +3,7 @@
     <container active-item="topics">
       <div slot="right">
         <article :id="item._id" class="topic" v-for="(item, index) in list">
-          <div class="topic-head">
+          <div class="topic-header">
             <h1 class="topic-title">
               <router-link :to="{ name: 'topicDetail', params: { id: item._id } }">{{item.title}}</router-link>
             </h1>
@@ -14,7 +14,7 @@
               <time class="topic-date">{{item.createdDate}}</time>
             </div>
           </div>
-          <div class="topic-content">{{item.excerpt || '暂无介绍...'}}</div>
+          <div class="topic-content">{{item.abstract || '暂无介绍...'}}</div>
           <!-- <div class="topic-content" v-html="item.html" v-highlight>
           </div> -->
           <div class="topic-link">
@@ -37,7 +37,7 @@
 <script>
 import container from '../components/container'
 import pagination from '../components/pagination'
-import getData from '@/api/getData'
+import api from '@/api'
 export default {
   data() {
     return {
@@ -63,13 +63,11 @@ export default {
   },
   methods: {
     async _initData(page) {
-      let url = page ? '/topics?page=' + page
-        : '/topics'
-      this.list = await getData({url})
-      this.count = await getData({url: '/topics/count'})
+      this.list = await api.getTopics({page: page})
+      this.count = await api.getTopicCount()
     },
     handleCurrentChange(page) {
-      let url = '/topics?page=' + page
+      let url = `/topics?page=${page}`
       this.$router.push(url)
     }
   }
@@ -84,16 +82,12 @@ export default {
   margin-bottom: 20px;
 }
 
-.topic-head {
-  text-align: center;
-}
-
-.page {
-  margin-bottom: 20px;
+.topic-header {
   text-align: center;
 }
 
 .pagination {
   text-align: center;
+  margin-bottom: 20px;
 }
 </style>

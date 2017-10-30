@@ -8,6 +8,9 @@
         <el-menu-item index="about">
           <i class="el-icon-message"></i>关于
         </el-menu-item>
+        <!-- <el-menu-item v-for="(item, index) in catalogs">
+          {{ item }}
+        </el-menu-item> -->
       </div>
     </el-menu>
 
@@ -63,9 +66,10 @@
 
 //TODO: rebuild
 export default {
-  props: ['activeIndex'],
+  props: ['activeIndex'],  // FIXME: 默认传值？？？？
   data() {
     return {
+      catalogs: ['html', 'css', 'node', 'javaScript', 'linux', 'c++'],
       // activeIndex: 'topics',
       isMobile: false
     };

@@ -27,7 +27,7 @@ export default {
   props: ['active-item'],
   data() {
     return {
-      'active-item': 'topics',
+      // 'active-item': 'topics',
       list: [
         {
           id: 1,
@@ -62,6 +62,6 @@ export default {
 }
 
 .main {
-  padding-right: 15px;
+  padding-right: 20px;
 }
 </style>

@@ -15,25 +15,53 @@
     </div>
 
     <div class="widget">
-      <h3 class="title">标签云</h3>
+      <h3 class="title">热门文章</h3>
       <div class="content tag-cloud">
-        <span class="tag" v-for="item in tags">
-          <router-link :to="{ name: 'topicTag', params: { tag: item } }">{{item}}(2)</router-link>
-        </span>
+        <div class="topic-list" v-for="item in hotTopics">
+          <router-link :to="{ name: 'topicDetail', params: { id: item.id } }">{{item.title}}</router-link>
+        </div>
       </div>
     </div>
+
+    <div class="widget">
+      <h3 class="title">分类</h3>
+      <div class="content tag-cloud">
+        <div class="catalog-list" v-for="item in catalogs">
+          <router-link :to="{ name: 'topicDetail', params: { id: item } }">{{item}}(2)</router-link>
+        </div>
+      </div>
+    </div>
+
+    <div class="widget">
+      <h3 class="title">标签云</h3>
+      <div class="content tag-cloud">
+        <div class="tag-list" v-for="item in tags">
+          <router-link :to="{ name: 'topicDetail', params: { id: item } }">{{item}}</router-link>
+        </div>
+      </div>
+    </div>
+
 
   </div>
 </template>
 
 <script>
+import api from '@/api'
 export default {
   data() {
     return {
+      hotTopics: [],
+      catalogs: ['html', 'css', 'node', 'javaScript', 'linux', 'c++'],
       tags: ['html', 'css', 'node', 'javaScript', 'golang']
     }
   },
+  created() {
+    this._initData()
+  },
   methods: {
+    async _initData() {
+      this.hotTopics = await api.getHotTopics()
+    },
     openDetail(id) {
       this.$router.push('topics/' + id)
     }
@@ -55,20 +83,18 @@ export default {
   padding-bottom: 7px;
   border-bottom: 1px solid #ebebeb;
   margin-bottom: 21px;
-  // position: relative;
 }
 
-.tag-cloud  .router-link {
-  // display: inline-block;
-  // float: left;
-  // padding-right: 8px;
-}
-
-.tag {
+.tag-list {
   display: inline-block;
-  // float: left;
   padding-right: 18px;
+  a {
+    border: 1px solid #ebebeb;
+    line-height: 1.5em;
+    padding:2px 7px;
+  }
 }
+
 
 // display none
 @media screen and (max-width:768px) {

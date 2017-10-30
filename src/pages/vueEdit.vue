@@ -5,8 +5,8 @@
       标题:
       <el-input type="text" autosize :maxlength=12 placeholder="请输入标题" v-model="title">
       </el-input>
-      摘抄:
-      <el-input type="text" autosize :maxlength=12 placeholder="请输入简介" v-model="excerpt">
+      摘要:
+      <el-input type="text" autosize :maxlength=12 placeholder="请输入摘要" v-model="abstract">
       </el-input>
       标签:
       <el-input type="text" autosize placeholder="请输入标签,以','隔开.例如: js,css" v-model="tags">
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import getData from '@/api/getData'
+import api from '@/api'
 import navMenu from '../components/navMenu'
 import { mavonEditor } from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
@@ -30,7 +30,7 @@ export default {
     return {
       content: 'show time...',
       title: '',
-      excerpt: '',
+      abstract: '',
       tags: ''
     }
   },
@@ -55,20 +55,16 @@ export default {
       let title = this.title.trim()
       if (!title) return this.$message.warning('标题为必填项!')
       if (!this.tags) return this.$message.warning('标签为必填项!')
-      let topic = await getData({
-        method: 'post',
-        url: '/topics',
-        data: {
-          title: title,
-          excerpt: this.excerpt,
-          markdown: this.markdown,
-          html: this.html,
-          tags: this.tags.split(',')
-        }
+      let topic = await api.addTopic({
+        title: title,
+        abstract: this.abstract,
+        content: this.content,
+        html: this.html,
+        tags: this.tags.split(',')
       })
       this.$message.success('提交成功!')
-      let url = '/topics/' + topic._id
-      this.$router.push(url)
+      // let url = `/topics/${topic._id}`
+      // this.$router.push(url)
     },
   }
 }
