@@ -8,7 +8,7 @@
             <h1 class="topic-title">{{topic.title}}</h1>
             <section class="topic-meta">
               <span class="author">作者：
-                <a href="/about">{{topic.createdBy}}</a>
+                <a href="/about">{{topic.author.nickname}}</a>
               </span> •
               <time class="topic-date">{{topic.createdDate}}</time>
             </section>

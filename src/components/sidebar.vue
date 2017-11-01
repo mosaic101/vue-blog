@@ -17,8 +17,8 @@
     <div class="widget">
       <h3 class="title">热门文章</h3>
       <div class="content tag-cloud">
-        <div class="topic-list" v-for="item in hotTopics">
-          <router-link :to="{ name: 'topicDetail', params: { id: item.id } }">{{item.title}}</router-link>
+        <div class="topic-list" v-for="(item, index) in hotTopics">
+          <router-link :to="{ name: 'topicDetail', params: { id: item.id } }">{{index+1}}. {{item.title}}</router-link>
         </div>
       </div>
     </div>

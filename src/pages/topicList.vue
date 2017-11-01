@@ -9,7 +9,7 @@
             </h1>
             <div class="topic-meta">
               <span class="author">作者：
-                <router-link :to="{ path: 'about' }">{{item.createdBy}}</router-link>
+                <router-link :to="{ path: 'about' }">{{item.author.nickname}}</router-link>
               </span> •
               <time class="topic-date">{{item.createdDate}}</time>
             </div>
